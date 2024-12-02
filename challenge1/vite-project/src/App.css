@@ -1,35 +1,80 @@
-.input {
+/* :root{
+
+} */
+.App {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  /* text-align: justify; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: darkblue;
-  width: 250px;
+  background-color: palegoldenrod;
   padding: 5px;
   border-radius: 3%;
+  position: relative;
 }
-.revealed.input:after {
+.container::after {
+  content: "";
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: peru;
+  position: absolute;
+  right: 5px;
+  z-index: 1;
+  transition: all 0.25s ease-in-out;
+}
+.revealed.container::after {
   height: 100%;
   width: 100%;
   right: 0;
-  border-radius: 10px;
+  border-radius: 3%;
 }
-
-.password-input{
+.password-input {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   background: transparent;
   color: white;
   border: 0;
-  font-size: large;
+  font-size: 18px;
+  margin-right: 10px;
+  height: 50px;
+  width: 200px;
+  border: none;
+  z-index: 3;
 }
-.lock-icon, .eye-icon{
+.password-input:focus {
+  border: none;
+  outline: none;
+}
+.lock {
   height: 30px;
   width: 30px;
+  fill: peru;
+  margin-right: 5px;
+  border-right: 2px solid peru;
+}
+.revealed .lock {
+  fill: white;
+  z-index: 4;
+}
+.reveal {
+  height: 50px;
+  width: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
   z-index: 2;
 }
-
-.revealed {
-  background-color: black;
+.eyeball {
+  height: 100%;
+  width: 100%;
 }
